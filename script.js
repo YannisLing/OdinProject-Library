@@ -1,0 +1,19 @@
+function Book(title,author,pages,isreade){
+            if(!new.target){
+                throw Error("你必须使用new调用这个对象构造函数")
+            }
+            this.title = title;
+            this.author = author;
+            this.numberOfPages= pages;
+            this.isreade =isreade;
+            this.info = function(){
+                if(this.isreade){
+                    return (`${title} by ${author}, ${pages} pages, have been readed`);
+                }else{
+                    return (`${title} by ${author}, ${pages} pages, not read yet`);
+                }
+                
+            }
+        }
+        const  theHobbit = new Book("The Hobbit","J.R.R. Tolkien",295,true);
+        console.log(theHobbit.info());
